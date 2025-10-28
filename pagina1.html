@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pergunta 1</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      text-align: center;
+      position: relative;
+    }
+
+    /* 🔙 BOTÃO DE VOLTAR */
+    .voltar {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+    }
+
+    .voltar img {
+      width: 75px;
+      height: 50px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .voltar img:hover {
+      transform: scale(1.1);
+    }
+
+    .main-image {
+      width: 350px;
+      max-width: 90%;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      margin-top: 60px;
+      margin-bottom: 20px;
+    }
+
+    .texto {
+      font-size: 30px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .botoes {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .botoes button {
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 15px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+
+    .botoes button:hover {
+      background-color: #004999;
+      transform: scale(1.05);
+    }
+
+    .mensagem {
+      margin-top: 25px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔙 BOTÃO DE VOLTAR -->
+  <div class="voltar">
+    <a href="index.html">
+      <img src="imagens/voltar.png" alt="Voltar" border="0" width="300" height="150"></p>
+    </a>
+  </div>
+
+  <!-- IMAGEM E PERGUNTA -->
+  <img src="imagens/pergunta1.png" alt="Imagem da Pergunta 1" class="main-image">
+
+  <div class="texto">
+    <p>A necessidade de se abrigar do frio, da chuva e de animais perigosos, buscando cavernas ou construindo moradias simples é característico de quais povos?</p>
+  </div>
+
+  <!-- BOTÕES DE RESPOSTA -->
+ <div class="botoes">
+  <button onclick="respostaErrada()">POVOS PRÉ-HISTÓRICOS</button>
+  <button onclick="respostaErrada()">POVOS CONTEMPORÂNEOS</button>
+  <button onclick="respostaCerta()">AMBOS OS POVOS</button>
+</div>
+
+  <div id="mensagem" class="mensagem"></div>
+
+  <script>
+    function respostaCerta() {
+      document.getElementById('mensagem').textContent = '✅ Resposta correta! Muito bem!';
+      document.getElementById('mensagem').style.color = 'green';
+    }
+
+    function respostaErrada() {
+      document.getElementById('mensagem').textContent = '❌ Resposta incorreta! Tente novamente.';
+      document.getElementById('mensagem').style.color = 'red';
+    }
+  </script>
+
+</body>
+</html>
